@@ -1,62 +1,23 @@
-/*************************************************************
- *
- * $Id: tList.c 2102 2018-11-19 10:26:08Z phil $
- * 
- *************************************************************
- */
-/**
- * Sample test program for generic Lists : application to strings.
- *
- *************************************************************/
-
-static char rcsId[] = "@(#) $Id: tList.c 2102 2018-11-19 10:26:08Z phil $";
 
 #include <stdio.h>
 #include <string.h>
 #include "List.h"
 
-
-/*************************************************************
- * Function to compare two elements (strings) : based on strcmp
- * @param s1 the first string to compare
- * @param s2 the second string to compare
- * @return <0 if s1 is less than s2
- * @return 0 if s1 equals s2
- * @return >0 otherwise
- *************************************************************/
 static int compString (void * s1, void * s2) {
   return strcmp((char*)s1, (char*)s2);
 }
 
-/*************************************************************
- * Function to display an element of the list
- * @param s the string to display
- *************************************************************
- */
 static void prString(void * s) {
   printf("%s",(char*)s);
 }
 
-/*************************************************************
- * another display function, just to test "forEach"
- * @param s the string to display
- *************************************************************/
 static void prString2 (void * s) {
   printf("%s\n",(char*)s);
 }
 
-/*************************************************************
- * test predicate for firstThat / allThat
- * @param s the element to test
- *************************************************************/
 int startsWithM(void* s){
   return ((char*)s)[0] == 'm';
 }
-
-/*************************************************************
- * test program: creation of a list of strings then tests
- * for main list functionalities.
- *************************************************************/
 
 int main() {
   int i; status st;
@@ -116,4 +77,4 @@ int main() {
 
   return 0;
 }
-/*************************************************************/
+
